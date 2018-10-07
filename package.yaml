@@ -1,0 +1,64 @@
+name:                sounds-of-english
+version:             0.1.0.0
+github:              "panaeon/sounds-of-english"
+license:             BSD3
+author:              "vitalii voloshyn"
+maintainer:          "example@example.com"
+copyright:           "2018 vitalii voloshyn"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on Github at <https://github.com/panaeon/sounds-of-english#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- filepath
+- system-fileio
+- system-filepath
+- text
+- time
+- process
+- MissingH
+- network-uri
+- haskell-gi
+- haskell-gi-base
+- gi-gobject
+- gi-glib
+- gi-gdk
+- gi-gdkpixbuf
+- gi-gtk
+- gtk3
+
+library:
+  source-dirs: src
+
+executables:
+  sounds-of-english-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - sounds-of-english
+
+tests:
+  sounds-of-english-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - sounds-of-english
