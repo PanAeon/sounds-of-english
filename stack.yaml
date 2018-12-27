@@ -15,7 +15,7 @@
 # resolver:
 #  name: custom-snapshot
 #  location: "./custom-snapshot.yaml"
-resolver: lts-9.20
+resolver: lts-12.25
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
@@ -70,8 +70,8 @@ packages:
 # gnome3.gsettings-desktop-schemas
 nix:
   enable: true
-  pure: true
-  packages: [ mplayer gnome3.gtk3 gobjectIntrospection gnome3.glib pkgconfig  zlib ncurses gcc ncurses.dev ncurses.out zlib.dev zlib.out]
+  pure: false
+  packages: [ mesa_noglu.drivers  mplayer gnome3.gtk3 gobjectIntrospection gnome3.glib pkgconfig  zlib ncurses gcc ncurses.dev ncurses.out zlib.dev zlib.out]
 # nix:
 #   enable: true
 #   packages: [ gnome3.gtk gnome3.glib pango  cairo xorg.libX11 xorg.libXrandr
